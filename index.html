@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTUAGo | NN-Optimized Mobility for NTUA</title>
+    <title>NTUAGo | Green Mobility for NTUA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .hero-mesh {
-            background-color: #8B0000;
-            background-image: radial-gradient(at 0% 0%, hsla(0,100%,15%,1) 0, transparent 50%), 
-                              radial-gradient(at 50% 0%, hsla(0,100%,10%,1) 0, transparent 50%), 
-                              radial-gradient(at 100% 0%, hsla(0,100%,20%,1) 0, transparent 50%);
+            background-color: #064e3b;
+            background-image: radial-gradient(at 0% 0%, hsla(160,100%,10%,1) 0, transparent 50%), 
+                              radial-gradient(at 50% 0%, hsla(150,100%,15%,1) 0, transparent 50%), 
+                              radial-gradient(at 100% 0%, hsla(140,100%,20%,1) 0, transparent 50%);
         }
         .nn-border {
             position: relative;
             background: linear-gradient(white, white) padding-box,
-                        linear-gradient(to right, #8B0000, #ff4d4d) border-box;
+                        linear-gradient(to right, #059669, #34d399) border-box;
             border: 2px solid transparent;
         }
         .stats-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        .feature-card { transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); }
+        .social-gradient { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
+        .impact-gradient { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); }
     </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -30,175 +34,206 @@
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-red-800 rounded-lg flex items-center justify-center text-white font-bold italic shadow-lg">N</div>
-                <div class="text-xl font-black text-red-800 tracking-tighter italic">NTUA<span class="text-slate-900 font-extrabold not-italic underline decoration-red-600">Go</span></div>
+                <div class="w-8 h-8 bg-emerald-800 rounded-lg flex items-center justify-center text-white font-bold italic shadow-lg">N</div>
+                <div class="text-xl font-black text-emerald-800 tracking-tighter italic">NTUA<span class="text-slate-900 font-extrabold not-italic underline decoration-emerald-500">Go</span></div>
             </div>
             <div class="hidden lg:flex gap-8 font-bold text-xs uppercase tracking-widest text-slate-600">
-                <a href="#nn-engine" class="hover:text-red-700 transition">Neural Network</a>
-                <a href="#rules" class="hover:text-red-700 transition">Core Rules</a>
-                <a href="#win-win" class="hover:text-red-700 transition">Win-Win Model</a>
-                <a href="#impact" class="hover:text-red-700 transition">Impact</a>
+                <a href="#driver-options" class="hover:text-emerald-700 transition">Επιλογές Οδηγού</a>
+                <a href="#nn-engine" class="hover:text-emerald-700 transition">Νευρωνικό Δίκτυο</a>
+                <a href="#impact" class="hover:text-emerald-700 transition">Αποτύπωμα</a>
+                <a href="#community" class="hover:text-emerald-700 transition">Κοινότητα</a>
             </div>
             <div class="flex items-center gap-4">
                 <span class="hidden sm:block text-[10px] font-bold text-slate-400 uppercase tracking-widest">Hackathon 2026 Edition</span>
-                <a href="#qr" class="bg-slate-900 text-white px-6 py-2.5 rounded-full text-xs font-bold hover:bg-red-800 transition shadow-lg shadow-red-900/20">Live Demo</a>
+                <a href="#qr" class="bg-emerald-900 text-white px-6 py-2.5 rounded-full text-xs font-bold hover:bg-emerald-800 transition shadow-lg shadow-emerald-900/20">Live Demo</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="pt-32 pb-24 hero-mesh text-white">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center text-center lg:text-left">
             <div class="space-y-8">
-                <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full border border-white/20">
-                    <i data-lucide="cpu" size="14" class="text-red-400"></i>
-                    <span class="text-[10px] font-black uppercase tracking-widest">Strict Route Optimization Logic</span>
+                <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full border border-white/20 mx-auto lg:mx-0">
+                    <i data-lucide="leaf" size="14" class="text-emerald-400"></i>
+                    <span class="text-[10px] font-black uppercase tracking-widest text-balance">Carpooling to NTUA</span>
                 </div>
+                <!-- Headline Update -->
                 <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight text-balance">
-                    Μηδενική Απόκλιση. <br/><span class="text-red-400 italic">Απόλυτο Όφελος.</span>
+                    Περιβάλλον, Οδηγός και Επιβάτης: <br/><span class="text-emerald-400 italic">Όλοι κερδίζουν.</span>
                 </h1>
-                <p class="text-lg text-red-50/80 max-w-xl leading-relaxed">
-                    Το <strong>NTUAGo</strong> εγγυάται ότι ο οδηγός δεν αλλάζει ποτέ διαδρομή και δεν περιμένει. Το SNN βρίσκει το ιδανικό pickup point πάνω στην πορεία του, εξασφαλίζοντας 100% αποδοτικότητα.
+                <p class="text-lg text-emerald-50/80 max-w-xl leading-relaxed mx-auto lg:mx-0">
+                    Το <strong>NTUAGo</strong> επαναπροσδιορίζει τη μετακίνηση στο ΕΜΠ με οικολογική συνείδηση. Ελαχιστοποιούμε τους ρύπους και το χρόνο μετακίνησης μέσω έξυπνων νευρωνικών δικτύων.
                 </p>
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="#nn-engine" class="bg-white text-red-900 px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:shadow-2xl transition">
-                        Πώς λειτουργεί το SNN <i data-lucide="arrow-right" size="18"></i>
+                <div class="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
+                    <a href="#driver-options" class="bg-white text-emerald-900 px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:shadow-2xl transition">
+                        Δες τις λειτουργίες <i data-lucide="arrow-right" size="18"></i>
                     </a>
                 </div>
             </div>
+            <!-- Stats Cards - Balanced Grid -->
             <div class="grid grid-cols-2 gap-4">
-                <div class="stats-card p-6 rounded-3xl border border-white/10 mt-12">
-                    <i data-lucide="navigation-2" class="text-red-400 mb-4"></i>
-                    <div class="text-3xl font-black italic">0m</div>
-                    <div class="text-[10px] uppercase font-bold text-red-200 tracking-widest">Driver Deviation</div>
+                <div class="stats-card p-8 rounded-3xl border border-white/10 flex flex-col items-center justify-center text-center">
+                    <i data-lucide="leaf" class="text-emerald-400 mb-4" size="28"></i>
+                    <div class="text-3xl font-black italic">-75%</div>
+                    <div class="text-[10px] uppercase font-bold text-emerald-200 tracking-widest mt-1">CO2 Emissions</div>
                 </div>
-                <div class="stats-card p-6 rounded-3xl border border-white/10">
-                    <i data-lucide="timer-off" class="text-blue-400 mb-4"></i>
-                    <div class="text-3xl font-black">Zero</div>
-                    <div class="text-[10px] uppercase font-bold text-red-200 tracking-widest">Driver Wait Time</div>
+                <div class="stats-card p-8 rounded-3xl border border-white/10 flex flex-col items-center justify-center text-center">
+                    <i data-lucide="map" class="text-blue-400 mb-4" size="28"></i>
+                    <div class="text-3xl font-black">Athens</div>
+                    <div class="text-[10px] uppercase font-bold text-emerald-200 tracking-widest mt-1">Traffic Relief</div>
                 </div>
-                <div class="stats-card p-6 rounded-3xl border border-white/10">
-                    <i data-lucide="brain-circuit" class="text-amber-400 mb-4"></i>
-                    <div class="text-3xl font-black italic">SNN</div>
-                    <div class="text-[10px] uppercase font-bold text-red-200 tracking-widest">Neural Point Scoring</div>
+                <div class="stats-card p-8 rounded-3xl border border-white/10 flex flex-col items-center justify-center text-center">
+                    <i data-lucide="brain-circuit" class="text-teal-400 mb-4" size="28"></i>
+                    <div class="text-3xl font-black italic text-balance leading-none">Neural</div>
+                    <div class="text-[10px] uppercase font-bold text-emerald-200 tracking-widest mt-1">Network Logic</div>
                 </div>
-                <div class="stats-card p-6 rounded-3xl border border-white/10 mt-[-48px]">
-                    <i data-lucide="leaf" class="text-green-400 mb-4"></i>
-                    <div class="text-3xl font-black">-75%</div>
-                    <div class="text-[10px] uppercase font-bold text-red-200 tracking-widest">CO2 Impact</div>
+                <div class="stats-card p-8 rounded-3xl border border-white/10 flex flex-col items-center justify-center text-center">
+                    <i data-lucide="zap" class="text-emerald-300 mb-4" size="28"></i>
+                    <div class="text-3xl font-black italic">Faster</div>
+                    <div class="text-[10px] uppercase font-bold text-emerald-200 tracking-widest mt-1">Commute Time</div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Core Rules Section (The "No Friction" Policy) -->
-    <section id="rules" class="py-16 bg-slate-50 border-b border-slate-200">
+    <!-- Driver Choices Section -->
+    <section id="driver-options" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-200">
-                    <h3 class="text-2xl font-black mb-6 uppercase tracking-tighter text-red-800">The Frictionless Policy</h3>
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center shrink-0 text-red-700 font-bold">
-                                <i data-lucide="map-pinned"></i>
-                            </div>
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-900 text-balance">Επιλογές Οδηγού</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto italic font-medium">Εσύ αποφασίζεις πώς θα επιβραβευτείς για τη θέση που μοιράζεσαι.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="feature-card bg-emerald-50/30 p-10 rounded-[3rem] border border-emerald-100 border-l-8 border-l-emerald-600 shadow-sm text-balance">
+                    <div class="bg-emerald-100 text-emerald-700 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                        <i data-lucide="coins"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-4 text-slate-800">Γλίτωσε την Βενζίνη</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Άμεση οικονομική ελάφρυνση. Οι επιβάτες συνεισφέρουν στο κόστος της διαδρομής σου, κάνοντας τις καθημερινές μετακινήσεις σου πιο οικονομικές.</p>
+                    <span class="text-[10px] font-black uppercase tracking-widest bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full italic">Fuel Sharing Mode</span>
+                </div>
+                <div class="feature-card bg-emerald-50/30 p-10 rounded-[3rem] border border-emerald-100 border-l-8 border-l-emerald-500 shadow-sm text-balance">
+                    <div class="bg-emerald-100 text-emerald-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-4 text-slate-800">Συλλογή Credits</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Κέρδισε πόντους που σου δίνουν <strong>προτεραιότητα Parking</strong> στους ειδικά διαμορφωμένους χώρους carpooling μέσα στην Πολυτεχνειούπολη.</p>
+                    <span class="text-[10px] font-black uppercase tracking-widest bg-emerald-200 text-emerald-800 px-3 py-1 rounded-full italic">Priority Parking Mode</span>
+                </div>
+            </div>
+
+            <!-- Driver's Rule -->
+            <div class="bg-slate-900 rounded-[3rem] p-10 text-white shadow-2xl overflow-hidden relative text-center lg:text-left">
+                <div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
+                    <div>
+                        <h3 class="text-3xl font-black mb-6 uppercase tracking-tighter text-emerald-400 italic text-balance">Ο Κανόνας του Οδηγού</h3>
+                        <p class="text-emerald-100/70 text-lg mb-8 leading-relaxed italic font-medium text-balance mx-auto lg:mx-0">
+                            Το NTUAGo είναι η μόνη λύση που δεν ζητά από τον οδηγό να θυσιάσει χρόνο, παρά μόνο να μοιραστεί μια κενή θέση.
+                        </p>
+                    </div>
+                    <div class="grid gap-6">
+                        <div class="flex gap-6 items-start bg-white/5 p-6 rounded-2xl border border-white/10 text-left">
+                            <div class="w-10 h-10 bg-emerald-500/20 rounded-xl flex items-center justify-center shrink-0 text-emerald-400"><i data-lucide="navigation"></i></div>
                             <div>
-                                <h4 class="font-bold">Καμία Αλλαγή Διαδρομής</h4>
-                                <p class="text-sm text-slate-500 font-medium">Η διαδρομή του οδηγού παραμένει η βέλτιστη. Η εφαρμογή εντοπίζει επιβάτες που βρίσκονται ήδη πάνω στον άξονα κίνησής του.</p>
+                                <h4 class="font-bold text-lg">100% Σταθερή Διαδρομή</h4>
+                                <p class="text-sm text-emerald-100/60 font-medium text-balance">Η εφαρμογή επιλέγει επιβάτες που βρίσκονται ήδη πάνω στην πορεία σου. Καμία απόκλιση.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center shrink-0 text-red-700 font-bold">
-                                <i data-lucide="alarm-clock-off"></i>
-                            </div>
+                        <div class="flex gap-6 items-start bg-white/5 p-6 rounded-2xl border border-white/10 text-left">
+                            <div class="w-10 h-10 bg-emerald-500/20 rounded-xl flex items-center justify-center shrink-0 text-emerald-400"><i data-lucide="timer-off"></i></div>
                             <div>
-                                <h4 class="font-bold">Μηδενική Αναμονή Οδηγού</h4>
-                                <p class="text-sm text-slate-500 font-medium">Ο επιβάτης πρέπει να βρίσκεται στο σημείο πριν το όχημα. Ο οδηγός εκτελεί μόνο μια στάση 5 δευτερολέπτων (hop-in).</p>
+                                <h4 class="font-bold text-lg">Μηδενική Αναμονή</h4>
+                                <p class="text-sm text-emerald-100/60 font-medium text-balance">Ο επιβάτης σε περιμένει, όχι εσύ. Η στάση διαρκεί μόλις 5 δευτερόλεπτα.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="space-y-6">
-                    <h2 class="text-4xl font-black tracking-tight uppercase leading-[1.1]">Σχεδιασμένο για τον <br/><span class="text-red-700 italic">Οδηγό του ΕΜΠ.</span></h2>
-                    <p class="text-slate-600 text-lg font-medium leading-relaxed">
-                        Εξαλείφουμε κάθε λόγο άρνησης. Το NTUAGo είναι η μόνη λύση που δεν ζητά από τον οδηγό να θυσιάσει χρόνο, παρά μόνο να μοιραστεί μια κενή θέση.
-                    </p>
-                </div>
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl"></div>
             </div>
         </div>
     </section>
 
     <!-- NN Engine Section -->
-    <section id="nn-engine" class="py-24 bg-white relative">
+    <section id="nn-engine" class="py-24 bg-slate-50 relative border-y border-slate-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row gap-16 items-center">
                 <div class="lg:w-1/2 order-2 lg:order-1">
-                    <div class="nn-border p-8 rounded-[2.5rem] bg-slate-50 shadow-inner">
+                    <div class="nn-border p-8 rounded-[2.5rem] bg-white shadow-xl">
                         <div class="flex items-center gap-3 mb-8">
-                            <div class="w-3 h-3 rounded-full bg-red-600 animate-pulse"></div>
-                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 italic">SNN Pickup Point Logic</span>
+                            <div class="w-3 h-3 rounded-full bg-emerald-600 animate-pulse"></div>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 italic text-left">SNN Smart Optimization Engine</span>
                         </div>
                         
                         <!-- NN Visualization -->
                         <div class="flex justify-between items-center mb-10 px-4">
-                            <div class="space-y-6">
-                                <div class="w-4 h-4 rounded-full bg-slate-300 relative group"><span class="absolute right-6 -top-1 text-[10px] font-bold whitespace-nowrap opacity-100 transition uppercase tracking-tighter">Time</span></div>
-                                <div class="w-4 h-4 rounded-full bg-slate-300 relative group"><span class="absolute right-6 -top-1 text-[10px] font-bold whitespace-nowrap opacity-100 transition uppercase tracking-tighter">Walk</span></div>
-                                <div class="w-4 h-4 rounded-full bg-slate-300 relative group"><span class="absolute right-6 -top-1 text-[10px] font-bold whitespace-nowrap opacity-100 transition uppercase tracking-tighter">Safety</span></div>
+                            <div class="space-y-4 text-left">
+                                <div class="w-4 h-4 rounded-full bg-emerald-200"><span class="ml-6 text-[9px] font-bold text-slate-400 uppercase italic">Walk</span></div>
+                                <div class="w-4 h-4 rounded-full bg-emerald-200"><span class="ml-6 text-[9px] font-bold text-slate-400 uppercase italic">Wait</span></div>
+                                <div class="w-4 h-4 rounded-full bg-emerald-200"><span class="ml-6 text-[9px] font-bold text-slate-400 uppercase italic">Safe</span></div>
+                                <div class="w-4 h-4 rounded-full bg-emerald-200"><span class="ml-6 text-[9px] font-bold text-slate-400 uppercase italic">User</span></div>
                             </div>
-                            <div class="flex-1 px-4">
-                                <svg class="w-full h-24 stroke-red-200 fill-none opacity-50">
-                                    <path d="M0 10 L100 48 M0 48 L100 48 M0 86 L100 48" stroke-width="2"/>
+                            <div class="flex-1 px-4 text-center">
+                                <svg class="w-full h-32 stroke-emerald-200 fill-none opacity-50">
+                                    <path d="M0 10 L100 64 M0 48 L100 64 M0 86 L100 64 M0 124 L100 64" stroke-width="2"/>
                                 </svg>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-red-800 shadow-lg shadow-red-200 flex items-center justify-center">
+                            <div class="w-8 h-8 rounded-full bg-emerald-800 shadow-lg shadow-emerald-200 flex items-center justify-center">
                                 <i data-lucide="check" size="14" class="text-white"></i>
                             </div>
                         </div>
 
-                        <div class="space-y-4">
-                            <div class="p-5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                        <div class="space-y-4 text-left">
+                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm">
                                 <div class="flex justify-between items-center mb-1">
-                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Input 1: Total Passenger Time</span>
-                                    <span class="text-red-700 font-bold text-[10px] uppercase tracking-tighter">Primary Metric</span>
+                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-widest">Input 1: Walking Time</span>
+                                    <span class="text-emerald-700 font-bold text-[9px] uppercase italic">Min Effort</span>
                                 </div>
-                                <p class="text-sm font-bold">Συνολικός χρόνος διαδρομής επιβάτη. Το NN πριμοδοτεί σημεία που ελαχιστοποιούν το "πόρτα-με-πόρτα".</p>
+                                <p class="text-[13px] leading-relaxed italic text-emerald-950 font-medium">Ελαχιστοποίηση χρόνου περπατήματος του επιβάτη.</p>
                             </div>
-                            <div class="p-5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm">
                                 <div class="flex justify-between items-center mb-1">
-                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Input 2: Walking Distance</span>
-                                    <span class="text-red-700 font-bold text-[10px] uppercase tracking-tighter">Effort Penalty</span>
+                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-widest">Input 2: Waiting Time</span>
+                                    <span class="text-emerald-700 font-bold text-[9px] uppercase italic">Max Speed</span>
                                 </div>
-                                <p class="text-sm font-bold">Η απόσταση που πρέπει να διανύσει ο επιβάτης μέχρι τη διαδρομή του οδηγού. Βελτιστοποίηση για το ελάχιστο δυνατό περπάτημα.</p>
+                                <p class="text-[13px] leading-relaxed italic text-emerald-950 font-medium">Βελτιστοποίηση για τον λιγότερο χρόνο αναμονής στη στάση.</p>
                             </div>
-                            <div class="p-5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm">
                                 <div class="flex justify-between items-center mb-1">
-                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Input 3: Bus Stop Proximity</span>
-                                    <span class="text-red-700 font-bold text-[10px] uppercase tracking-tighter">Legal/Safety Factor</span>
+                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-widest">Input 3: Road Safety Filter</span>
+                                    <span class="text-emerald-700 font-bold text-[9px] uppercase italic">Strict Safe</span>
                                 </div>
-                                <p class="text-sm font-bold text-balance leading-relaxed">Η εγγύτητα σε επίσημες στάσεις ή εσοχές. Εξασφαλίζει ότι η στάση 5 δευτερολέπτων είναι ασφαλής και νόμιμη.</p>
+                                <p class="text-[13px] leading-relaxed italic text-emerald-950 font-medium">Αποκλεισμός λεωφόρων και πριμοδότηση ασφαλών σημείων.</p>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-widest">Input 4: User Preferred Points</span>
+                                    <span class="text-emerald-700 font-bold text-[9px] uppercase italic">Reinforcement</span>
+                                </div>
+                                <p class="text-[13px] leading-relaxed italic text-emerald-950 font-medium text-balance">Εκπαίδευση του NN βάσει των επιλογών του χρήστη για βέλτιστη προσαρμογή.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="lg:w-1/2 space-y-6 order-1 lg:order-2">
-                    <h2 class="text-4xl font-black tracking-tight text-slate-900 uppercase leading-tight">Neural Network <br/><span class="text-red-700 italic">Dynamic Scoring</span> Engine</h2>
+                <div class="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center lg:text-left">
+                    <h2 class="text-4xl font-black tracking-tight text-slate-900 uppercase leading-tight italic">Neural Network <br/><span class="text-emerald-700 not-italic">Community</span> Intelligence</h2>
                     <p class="text-slate-600 leading-relaxed text-lg font-medium">
-                        Το **SNN (Small Neural Network)** του NTUAGo επεξεργάζεται 3 μετρήσιμες και αντικειμενικές παραμέτρους για να προτείνει τη βέλτιστη λύση, διατηρώντας το "Zero Friction" για τον οδηγό.
+                        Το **SNN (Small Neural Network)** του NTUAGo υπολογίζει πολλές παραμέτρους για να σου προσφέρει την πιο ξεκούραστη διαδρομή, μαθαίνοντας διαρκώς από τις προτιμήσεις των μελών.
                     </p>
                     <div class="grid gap-6">
-                        <div class="flex gap-4 p-5 rounded-3xl bg-slate-50 border border-slate-100">
-                            <div class="w-10 h-10 bg-white shadow-sm rounded-xl flex items-center justify-center shrink-0"><i data-lucide="database" size="20" class="text-red-800"></i></div>
+                        <div class="flex gap-4 p-5 rounded-3xl bg-white shadow-sm border border-slate-100 text-left">
+                            <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center shrink-0 shadow-sm text-emerald-700"><i data-lucide="cpu" size="20"></i></div>
                             <div>
-                                <h4 class="font-bold text-slate-800">Quantifiable Inputs</h4>
-                                <p class="text-xs text-slate-500 font-bold leading-relaxed">Χρήση γεωγραφικών δεδομένων και χρονικών προβλέψεων που μετατρέπονται σε αριθμητικά βάρη για άμεση επεξεργασία.</p>
+                                <h4 class="font-bold text-slate-800">Adaptive Matching</h4>
+                                <p class="text-xs text-slate-500 font-bold leading-relaxed">Ο αλγόριθμος βελτιώνεται δυναμικά από τις επιλογές των χρηστών.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4 p-5 rounded-3xl bg-slate-50 border border-slate-100">
-                            <div class="w-10 h-10 bg-white shadow-sm rounded-xl flex items-center justify-center shrink-0"><i data-lucide="zap" size="20" class="text-red-800"></i></div>
+                        <div class="flex gap-4 p-5 rounded-3xl bg-white shadow-sm border border-slate-100 text-left">
+                            <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center shrink-0 shadow-sm text-emerald-700"><i data-lucide="star" size="20"></i></div>
                             <div>
-                                <h4 class="font-bold text-slate-800">Millisecond Decisions</h4>
-                                <p class="text-xs text-slate-500 font-bold leading-relaxed">Ελαφριά αρχιτεκτονική που επιτρέπει τον υπολογισμό εκατοντάδων σημείων σε πραγματικό χρόνο κατά την αναζήτηση.</p>
+                                <h4 class="font-bold text-slate-800">Αμφίδρομη Αξιολόγηση</h4>
+                                <p class="text-xs text-slate-500 font-bold leading-relaxed">Μετά από κάθε διαδρομή, οδηγός και επιβάτης κάνουν κριτική ο ένας στον άλλον.</p>
                             </div>
                         </div>
                     </div>
@@ -207,29 +242,63 @@
         </div>
     </section>
 
-    <!-- Win-Win Model -->
-    <section id="win-win" class="py-24 bg-slate-900 text-white text-center">
+    <!-- Environmental Impact Section (New / Filtered) -->
+    <section id="impact" class="py-24 impact-gradient text-white">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-black uppercase tracking-tighter mb-16 italic">The Win-Win Ecosystem</h2>
-            <div class="grid md:grid-cols-2 gap-12 text-left text-balance">
-                <div class="bg-white/5 border border-white/10 p-10 rounded-[3rem] hover:bg-white/10 transition">
-                    <div class="bg-red-600 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-red-600/20 font-bold">
-                        <i data-lucide="car"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 italic uppercase">Οδηγός: 100% Συμφέρον</h3>
-                    <p class="text-slate-400 text-sm mb-8 leading-relaxed">Καμία αλλαγή στη διαδρομή σου. Καμία αναμονή. Κερδίζεις Credits για VIP Parking απλά κάνοντας μια νόμιμη στάση 5'' σε ένα σημείο που ήδη θα περνούσες.</p>
-                    <div class="inline-flex items-center gap-2 text-red-500 font-bold text-[10px] uppercase tracking-widest border border-red-500/30 px-3 py-1 rounded-full bg-red-500/10">
-                        <i data-lucide="award" size="14"></i> VIP Parking Unlocked
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8 text-center lg:text-left">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter italic text-balance">Συλλογική <br/><span class="text-emerald-400 not-italic">Βιωσιμότητα</span></h2>
+                    <p class="text-emerald-100/80 text-lg font-medium leading-relaxed italic text-balance mx-auto lg:mx-0">
+                        Η πλήρης αξιοποίηση των οχημάτων προς το ΕΜΠ μετατρέπει την καθημερινή μας μετακίνηση σε μια πράξη περιβαλλοντικής ευθύνης.
+                    </p>
+                    <div class="bg-white/10 backdrop-blur p-8 rounded-[2.5rem] border border-white/20">
+                        <div class="flex items-center gap-4 mb-4 justify-center lg:justify-start">
+                            <i data-lucide="trending-down" class="text-emerald-400"></i>
+                            <span class="text-[10px] font-black uppercase tracking-widest italic">Annual CO2 Reduction Projection</span>
+                        </div>
+                        <div class="text-5xl font-black text-emerald-300 mb-2 tracking-tighter">-1.094 Τόνοι</div>
+                        <p class="text-xs text-emerald-100 opacity-80 uppercase font-bold tracking-widest">Λιγότερο CO₂ στην ατμόσφαιρα ανά έτος</p>
                     </div>
                 </div>
-                <div class="bg-white/5 border border-white/10 p-10 rounded-[3rem] hover:bg-white/10 transition">
-                    <div class="bg-blue-600 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/20 font-bold">
-                        <i data-lucide="user"></i>
+                <div class="relative">
+                    <div class="bg-white/5 p-12 rounded-[3.5rem] border-4 border-emerald-400/30 text-center relative overflow-hidden group">
+                        <i data-lucide="trees" size="100" class="text-emerald-400 mx-auto mb-6 group-hover:scale-110 transition duration-500"></i>
+                        <h3 class="text-3xl font-black uppercase tracking-widest text-emerald-300 italic mb-2">~50.000 Δέντρα</h3>
+                        <p class="text-sm text-emerald-100 italic font-medium leading-relaxed px-4 text-balance">
+                            Η ετήσια εξοικονόμηση ρύπων ισοδυναμεί με τη φύτευση ενός νέου δάσους 50 χιλιάδων δέντρων στην καρδιά της Αθήνας.
+                        </p>
+                        <!-- Leaf decoration -->
+                        <div class="absolute -right-10 -bottom-10 opacity-10">
+                            <i data-lucide="leaf" size="200"></i>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 italic uppercase">Επιβάτης: Βέλτιστος Χρόνος</h3>
-                    <p class="text-slate-400 text-sm mb-8 leading-relaxed">Το SNN σου δείχνει το σημείο που θα σου προσφέρει τη γρηγορότερη πρόσβαση στο ΕΜΠ. Μειώνεις δραματικά το χρόνο μετακίνησης δωρεάν.</p>
-                    <div class="inline-flex items-center gap-2 text-blue-400 font-bold text-[10px] uppercase tracking-widest border border-blue-500/30 px-3 py-1 rounded-full bg-blue-500/10">
-                        <i data-lucide="zap" size="14"></i> AI-Optimized Transit
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Socialization & Trust Section -->
+    <section id="community" class="py-24 social-gradient">
+        <div class="max-w-7xl mx-auto px-6 text-center lg:text-left">
+            <div class="flex flex-col lg:flex-row gap-16 items-center justify-center">
+                <div class="max-w-3xl space-y-6">
+                    <h2 class="text-4xl font-black text-slate-900 tracking-tight uppercase leading-tight italic text-center">Χτίζοντας μια <br/><span class="text-emerald-700 not-italic">Κοινότητα</span></h2>
+                    <p class="text-slate-600 text-lg font-medium leading-relaxed italic text-center">
+                        Το NTUAGo δεν είναι απλά μεταφορά, είναι γνωριμίες. Μοιράσου τη διαδρομή σου με συμφοιτητές και κάνε νέους φίλους.
+                    </p>
+                    <div class="grid sm:grid-cols-3 gap-6 pt-4">
+                        <div class="flex flex-col gap-3 items-center text-center">
+                            <div class="bg-emerald-100 p-4 rounded-2xl text-emerald-700 shadow-sm"><i data-lucide="user-plus" size="28"></i></div>
+                            <span class="font-bold text-slate-800 text-xs italic">Δυνατότητα δημιουργίας φίλων.</span>
+                        </div>
+                        <div class="flex flex-col gap-3 items-center text-center">
+                            <div class="bg-emerald-100 p-4 rounded-2xl text-emerald-700 shadow-sm"><i data-lucide="message-square" size="28"></i></div>
+                            <span class="font-bold text-slate-800 text-xs italic">Ανταλλαγή απόψεων και σημειώσεων.</span>
+                        </div>
+                        <div class="flex flex-col gap-3 items-center text-center">
+                            <div class="bg-emerald-100 p-4 rounded-2xl text-emerald-700 shadow-sm"><i data-lucide="award" size="28"></i></div>
+                            <span class="font-bold text-slate-800 text-xs italic text-balance">Αμοιβαία κριτική μετά τη διαδρομή.</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -237,28 +306,28 @@
     </section>
 
     <!-- Final CTA & QR Code -->
-    <footer id="qr" class="py-24 bg-white text-center">
+    <footer id="qr" class="py-24 bg-slate-50 text-center border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-black mb-6 tracking-tight text-slate-900 uppercase tracking-tighter italic">Efficient NTUA Mobility</h2>
-            <p class="text-slate-500 mb-12 max-w-lg mx-auto font-bold opacity-80 uppercase tracking-widest text-[10px]">Σκανάρετε για να δείτε πώς το NTUAGo εφαρμόζει τους κανόνες "No Deviation" μέσω SNN.</p>
+            <h2 class="text-4xl font-black mb-6 tracking-tight text-emerald-900 uppercase tracking-tighter italic text-center">Efficient NTUA Mobility</h2>
+            <p class="text-slate-500 mb-12 max-w-lg mx-auto font-bold opacity-80 uppercase tracking-widest text-[10px] text-center">Σκανάρετε για να δείτε πώς το NTUAGo βελτιστοποιεί τη διαδρομή σας με ασφάλεια και ταχύτητα.</p>
             
             <div class="relative inline-block">
                 <div class="absolute inset-0 bg-red-600 blur-[80px] opacity-20 rounded-full"></div>
-                <div class="relative bg-slate-900 p-8 rounded-[3rem] shadow-2xl border-4 border-white inline-block group hover:scale-105 transition">
+                <div class="relative bg-emerald-950 p-8 rounded-[3rem] shadow-2xl border-4 border-white inline-block group hover:scale-105 transition duration-500">
                     <div class="bg-white p-4 rounded-2xl">
                         <i data-lucide="qr-code" size="140" class="text-slate-800"></i>
                     </div>
-                    <div class="text-white mt-4 font-black uppercase tracking-widest text-[10px] italic tracking-tighter">SNN OPTIMIZER LIVE DEMO</div>
+                    <div class="text-white mt-4 font-black uppercase tracking-widest text-[10px] italic tracking-tighter text-balance leading-none uppercase">SNN OPTIMIZER LIVE DEMO</div>
                 </div>
             </div>
             
-            <div class="mt-24 pt-12 border-t border-slate-100 text-[10px] font-bold text-slate-400 uppercase tracking-widest flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="flex items-center gap-2">
-                    <div class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></div> NTUA GO TEAM | NEURAL OPTIMIZATION 2026
+            <div class="mt-24 pt-12 border-t border-slate-100 text-[10px] font-bold text-slate-400 uppercase tracking-widest flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+                <div class="flex items-center gap-2 justify-center italic">
+                    <div class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></div> NTUA GO TEAM | SMART CAMPUS INITIATIVE 2026
                 </div>
-                <div class="flex gap-8">
-                    <a href="#" class="hover:text-red-700 transition">NN Documentation</a>
-                    <a href="#" class="hover:text-red-700 transition">Thematic Alignment</a>
+                <div class="flex gap-8 justify-center font-bold">
+                    <a href="#" class="hover:text-emerald-700 transition uppercase italic">Neural Logic Docs</a>
+                    <a href="#" class="hover:text-emerald-700 transition uppercase italic">Trust Score Stats</a>
                 </div>
             </div>
         </div>
